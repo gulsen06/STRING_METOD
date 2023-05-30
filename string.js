@@ -202,3 +202,23 @@ console.log(sentence.trimEnd());
 cumle = "Clarusway";
 console.log(cumle.startsWith("C"));
 console.log(cumle.startsWith("s"));
+
+console.clear();
+
+sayac = 0;
+const sayi = (d, l, h) => {
+  for (let i = l; i <= h; i++) {
+    if (i % 10 === d || Math.floor(i / 10) === d) {
+      sayac++;
+      console.log(i);
+    }
+  }
+  return sayac;
+};
+sayi(2, 10, 29);
+console.log(`toplam ${sayac} kere kullanilmis`);
+
+const tersYaz = (kelime) => {
+  console.log(kelime.split(" ").reverse().join(" "));
+};
+tersYaz("yasmak güzeldir");
