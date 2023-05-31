@@ -222,3 +222,80 @@ const tersYaz = (kelime) => {
   console.log(kelime.split(" ").reverse().join(" "));
 };
 tersYaz("yasmak güzeldir");
+
+let vecize = "bakarsan bag olur,bakmazsan dag olur";
+kelime = "kader";
+let yeniVecize = vecize.split(" ");
+console.log(yeniVecize);
+for (let i = 0; i < yeniVecize.length; i++)
+  kelime === yeniVecize[i]
+    ? console.log("kelime bulundu", kelime)
+    : console.log(kelime, "kelimesi yok");
+
+console.clear();
+const girilenAd = (girdi) =>
+  console.log(`${girdi.toUpperCase()} sitemize hosgeldin.`);
+girilenAd("hayrunnisa");
+
+let email = "kemalKacan@gmail.com";
+console.log(`kullanici adiniz:${email.split("@")[0]}`);
+
+let sayilar = "I-V-X-L";
+console.log(sayilar);
+sayilar.split("-");
+
+let yeniSayilar = sayilar
+  .replace("I", 1)
+  .replace("V", 5)
+  .replace("X", 10)
+  .replace("L", 50);
+console.log(yeniSayilar);
+
+const siraliYazdir = (girdi) => {
+  let döngüdenGelen = "";
+  for (let i = 0; i < girdi.length; i++) {
+    for (let j = i + 1; j <= girdi.length; j++) {
+      döngüdenGelen += girdi.slice(i, j) + " ";
+    }
+  }
+  return döngüdenGelen;
+};
+console.log(siraliYazdir("abc"));
+
+// function Substrings(word) {
+//   let word2 = "";
+//   for (var i = 0; i < word.length; i++) {
+//     for (var j = i + 1; j <= word.length; j++) {
+//       word2 += word.slice(i, j).concat(" ");
+//     }
+//   }
+//   return word2;
+// }
+
+// console.log(Substrings("abc"));
+
+// girilen cümledeki ünsüz sayılarını bulan program
+// sayı dizisindeki negatif sayıların toplamını bulan program
+// numbers=[-45,23,67,98,-546,-33232,0,5454,-34343]
+
+const unluler = (cümle) => {
+  let sayac = 0;
+  for (let i = 0; i < cümle.length; i++) {
+    if (cümle[i].match(/[aeioöuü]/gi)) {
+      console.log(cümle[i]);
+      sayac++;
+    }
+  }
+  console.log(sayac);
+};
+unluler("ankarali");
+
+let numbers = [-45, 23, 67, 98, -546, -33232, 0, 5454, -34343];
+const negatifsayilarinToplami = (numbers) => {
+  let sum = 0;
+  for (i = 0; i < numbers.length; i++) {
+    numbers[i] < 0 ? (sum += numbers[i]) : null;
+  }
+  console.log(sum);
+};
+negatifsayilarinToplami(numbers);
