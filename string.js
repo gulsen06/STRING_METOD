@@ -205,97 +205,144 @@ console.log(cumle.startsWith("s"));
 
 console.clear();
 
-sayac = 0;
-const sayi = (d, l, h) => {
-  for (let i = l; i <= h; i++) {
-    if (i % 10 === d || Math.floor(i / 10) === d) {
-      sayac++;
-      console.log(i);
+counter = 0;
+const sayi = (num, l, h) => {
+  if (l > 0 && l < h && num >= 0 && num < 10) {
+    for (let i = l; i <= h; i++) {
+      if (i % 10 === num && Math.floor(i / 10) === num) counter += 2;
+      else if (i % 10 === num && Math.floor(i / 10) !== num) counter++;
+      else if (i % 10 !== num && Math.floor(i / 10) === num) counter++;
     }
+    return counter;
+  } else {
+    return -1;
   }
-  return sayac;
 };
-sayi(2, 10, 29);
-console.log(`toplam ${sayac} kere kullanilmis`);
 
-const tersYaz = (kelime) => {
-  console.log(kelime.split(" ").reverse().join(" "));
-};
-tersYaz("yasmak güzeldir");
+sayi(5, 32, 45);
+console.log(`toplam ${counter} kere kullanilmis`);
 
-let vecize = "bakarsan bag olur,bakmazsan dag olur";
-kelime = "kader";
-let yeniVecize = vecize.split(" ");
-console.log(yeniVecize);
-for (let i = 0; i < yeniVecize.length; i++)
-  kelime === yeniVecize[i]
-    ? console.log("kelime bulundu", kelime)
-    : console.log(kelime, "kelimesi yok");
+// const tersYaz = (kelime) => {
+//   console.log(kelime.split(" ").reverse().join(" "));
+// };
+// tersYaz("yasmak güzeldir");
 
-console.clear();
-const girilenAd = (girdi) =>
-  console.log(`${girdi.toUpperCase()} sitemize hosgeldin.`);
-girilenAd("hayrunnisa");
+// let vecize = "bakarsan bag olur,bakmazsan dag olur";
+// kelime = "kader";
+// let yeniVecize = vecize.split(" ");
+// console.log(yeniVecize);
+// for (let i = 0; i < yeniVecize.length; i++)
+//   kelime === yeniVecize[i]
+//     ? console.log("kelime bulundu", kelime)
+//     : console.log(kelime, "kelimesi yok");
 
-let email = "kemalKacan@gmail.com";
-console.log(`kullanici adiniz:${email.split("@")[0]}`);
+// console.clear();
+// const girilenAd= (girdi) =>
+//   console.log(`${girdi.toUpperCase()} sitemize hosgeldin.`);
+// girilenAd("hayrunnisa");
 
-let sayilar = "I-V-X-L";
-console.log(sayilar);
-sayilar.split("-");
+// let email = "kemalKacan@gmail.com";
+// console.log(`kullanici adiniz:${email.split("@")[0]}`);
 
-let yeniSayilar = sayilar
-  .replace("I", 1)
-  .replace("V", 5)
-  .replace("X", 10)
-  .replace("L", 50);
-console.log(yeniSayilar);
+// let sayilar = "I-V-X-L";
+// console.log(sayilar);
+// sayilar.split("-");
 
-const siraliYazdir = (girdi) => {
-  let döngüdenGelen = "";
-  for (let i = 0; i < girdi.length; i++) {
-    for (let j = i + 1; j <= girdi.length; j++) {
-      döngüdenGelen += girdi.slice(i, j) + " ";
-    }
-  }
-  return döngüdenGelen;
-};
-console.log(siraliYazdir("abc"));
+// let yeniSayilar = sayilar
+//   .replace("I", 1)
+//   .replace("V", 5)
+//   .replace("X", 10)
+//   .replace("L", 50);
+// console.log(yeniSayilar);
 
-// function Substrings(word) {
-//   let word2 = "";
-//   for (var i = 0; i < word.length; i++) {
-//     for (var j = i + 1; j <= word.length; j++) {
-//       word2 += word.slice(i, j).concat(" ");
+// const siraliYazdir = (girdi) => {
+//   let döngüdenGelen = "";
+//   for (let i = 0; i < girdi.length; i++) {
+//     for (let j = i + 1; j <= girdi.length; j++) {
+//       döngüdenGelen += girdi.slice(i, j) + " ";
 //     }
 //   }
-//   return word2;
-// }
+//   return döngüdenGelen;
+// };
+// console.log(siraliYazdir("abc"));
 
-// console.log(Substrings("abc"));
+// // function Substrings(word) {
+// //   let word2 = "";
+// //   for (var i = 0; i < word.length; i++) {
+// //     for (var j = i + 1; j <= word.length; j++) {
+// //       word2 += word.slice(i, j).concat(" ");
+// //     }
+// //   }
+// //   return word2;
+// // }
 
-// girilen cümledeki ünsüz sayılarını bulan program
-// sayı dizisindeki negatif sayıların toplamını bulan program
-// numbers=[-45,23,67,98,-546,-33232,0,5454,-34343]
+// // console.log(Substrings("abc"));
 
-const unluler = (cümle) => {
-  let sayac = 0;
-  for (let i = 0; i < cümle.length; i++) {
-    if (cümle[i].match(/[aeioöuü]/gi)) {
-      console.log(cümle[i]);
-      sayac++;
-    }
+// // girilen cümledeki ünsüz sayılarını bulan program
+// // sayı dizisindeki negatif sayıların toplamını bulan program
+// // numbers=[-45,23,67,98,-546,-33232,0,5454,-34343]
+
+// const unluler = (cümle) => {
+//   let sayac = 0;
+//   for (let i = 0; i < cümle.length; i++) {
+//     if (cümle[i].match(/[aeioöuü]/gi)) {
+//       console.log(cümle[i]);
+//       sayac++;
+//     }
+//   }
+//   console.log(sayac);
+// };
+// unluler("ankarali");
+
+// let numbers = [-45, 23, 67, 98, -546, -33232, 0, 5454, -34343];
+// const negatifsayilarinToplami = (numbers) => {
+//   let sum = 0;
+//   for (i = 0; i < numbers.length; i++) {
+//     numbers[i] < 0 ? (sum += numbers[i]) : null;
+//   }
+//   console.log(sum);
+// };
+// negatifsayilarinToplami(numbers);
+
+ArrayA = ["", ""];
+ArrayB = [11, 23, 17];
+
+const mergeArrays = ArrayA.concat(ArrayB);
+mergeArrays.sort((a, b) => a - b);
+console.log(mergeArrays);
+console.clear();
+
+// let kelimeDizisi = "nemo is me";
+// const sonuc = (kelimeDizisi, ara) => {
+//   if (kelimeDizisi.includes(ara)) {
+//     console.log(
+//       `Nemo kelimesini   ${
+//         kelimeDizisi.split(" ").indexOf(ara) + 1
+//       }  . sirada buldum`
+//     );
+//   } else {
+//     console.log(`${ara} kelimesini  bulamadim`);
+//   }
+// };
+// sonuc(kelimeDizisi, "nemo");
+
+// let vecize = "bakarsan bag olur,bakmazsan dag olur";
+// kelime = "kader";
+// let yeniVecize = vecize.split(" ");
+// console.log(yeniVecize);
+// for (let i = 0; i < yeniVecize.length; i++)
+//   kelime === yeniVecize[i]
+//     ? console.log("kelime bulundu", kelime)
+//     : console.log(kelime, "kelimesi yok");
+let bos = [];
+let kelimeDizisi = "nemo is me";
+const sonuc = (kelimeDizisi, ara) => {
+  let x = kelimeDizisi.split(" ");
+  for (let i = 0; i < x.length; i++) {
+    if (x[i === ara]) bos[i] = true;
+    else bos[i] = false;
   }
-  console.log(sayac);
+  if (bos.includes(true)) console.log(`Nemo kelimesini  buldum`);
+  else console.log(`Nemo kelimesini  buldum`);
 };
-unluler("ankarali");
-
-let numbers = [-45, 23, 67, 98, -546, -33232, 0, 5454, -34343];
-const negatifsayilarinToplami = (numbers) => {
-  let sum = 0;
-  for (i = 0; i < numbers.length; i++) {
-    numbers[i] < 0 ? (sum += numbers[i]) : null;
-  }
-  console.log(sum);
-};
-negatifsayilarinToplami(numbers);
+sonuc(kelimeDizisi, "nemo");
