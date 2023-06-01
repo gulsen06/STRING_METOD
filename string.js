@@ -346,3 +346,26 @@ const sonuc = (kelimeDizisi, ara) => {
   else console.log(`Nemo kelimesini  buldum`);
 };
 sonuc(kelimeDizisi, "nemo");
+
+const atama = (giris) => {
+  let geriDöndür = [];
+  for (let i = 0; i < giris.length; i++) {
+    if (geriDöndür.indexOf(giris[i]) == -1) {
+      geriDöndür.push(giris[i]);
+    }
+  }
+  return geriDöndür;
+};
+console.log(atama([1, 2, 3]));
+
+function bul(satze) {
+  console.log(satze);
+  let neueSatze = satze.split(" ");
+  for (let i = 0; i < neueSatze.length; ++i) {
+    if (neueSatze[i] === "Nemo") {
+      return `nemoyu  ${i + 1} .de buldum`;
+    }
+  }
+  return "bulamadim";
+}
+console.log(bul("Nemo benim"));
