@@ -386,54 +386,54 @@ console.log(islemMatik("9+2"));
 //   else console.log(sonuc1);
 // };
 // toplamayiKiyasla(100, 79);
+const simdikiTarih = (simdikiGün, simdikiAy) => {
+  let simdi = new Date();
+  let ay = simdi.getMonth();
 
-// let simdi = new Date();
-// let ay = simdi.getMonth();
-// console.log(ay);
-// const aylar = [
-//   "Ocak",
-//   "Şubat",
-//   "Mart",
-//   "Nisan",
-//   "Mayıs",
-//   "Haziran",
-//   "Temmuz",
-//   "Ağustos",
-//   "Eylül",
-//   "Ekim",
-//   "Kasım",
-//   "Aralık",
-// ];
+  const aylar = [
+    "Ocak",
+    "Şubat",
+    "Mart",
+    "Nisan",
+    "Mayıs",
+    "Haziran",
+    "Temmuz",
+    "Ağustos",
+    "Eylül",
+    "Ekim",
+    "Kasım",
+    "Aralık",
+  ];
 
-// let simdikiAy;
-// for (let index = 0; index < aylar.length; index++) {
-//   if (index === ay) {
-//     simdikiAy = aylar[index];
-//     break;
-//   }
-// }
-
-// console.log(simdikiAy);
-console.clear();
-let simdi = new Date();
-let bugün = simdi.getDay();
-console.log(bugün);
-const günler = [
-  "Pazar",
-  "Pazartesi",
-  "Salı",
-  "Çarşamba",
-  "Perşembe",
-  "Cuma",
-  "Cumartesi",
-  ,
-];
-let simdikiGün;
-for (let index = 0; index < günler.length; index++) {
-  if (index === bugün) {
-    simdikiGün = günler[index];
-    break;
+  for (let index = 0; index < aylar.length; index++) {
+    if (index === ay) {
+      simdikiAy = aylar[index];
+      break;
+    }
   }
-}
 
-console.log(simdikiGün);
+  console.log(simdikiAy);
+
+  let bugün = simdi.getDay();
+  console.log(bugün);
+  const günler = [
+    "Pazar",
+    "Pazartesi",
+    "Salı",
+    "Çarşamba",
+    "Perşembe",
+    "Cuma",
+    "Cumartesi",
+    ,
+  ];
+
+  for (let index = 0; index < günler.length; index++) {
+    if (index === bugün) {
+      simdikiGün = günler[index];
+      break;
+    }
+  }
+
+  console.log(`Aylardan ${simdikiAy} günlerden ${simdikiGün}dir.`);
+};
+simdikiTarih();
