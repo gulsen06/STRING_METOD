@@ -369,3 +369,71 @@ function bul(satze) {
   return "bulamadim";
 }
 console.log(bul("Nemo benim"));
+
+console.clear();
+
+const islemMatik = (veri) => {
+  const sonuclar = veri.split("");
+  console.log(sonuclar);
+  if (sonuclar[1] === "+") return parseInt(sonuclar[0]) + parseInt(sonuclar[2]);
+  if (sonuclar[1] === "*") return parseInt(sonuclar[0]) * parseInt(sonuclar[2]);
+};
+console.log(islemMatik("9+2"));
+
+// const toplamayiKiyasla = (girdi1, girdi2) => {
+//   let sonuc1 = girdi1 + girdi2;
+//   if (sonuc1 < 100) console.log(false);
+//   else console.log(sonuc1);
+// };
+// toplamayiKiyasla(100, 79);
+
+// let simdi = new Date();
+// let ay = simdi.getMonth();
+// console.log(ay);
+// const aylar = [
+//   "Ocak",
+//   "Şubat",
+//   "Mart",
+//   "Nisan",
+//   "Mayıs",
+//   "Haziran",
+//   "Temmuz",
+//   "Ağustos",
+//   "Eylül",
+//   "Ekim",
+//   "Kasım",
+//   "Aralık",
+// ];
+
+// let simdikiAy;
+// for (let index = 0; index < aylar.length; index++) {
+//   if (index === ay) {
+//     simdikiAy = aylar[index];
+//     break;
+//   }
+// }
+
+// console.log(simdikiAy);
+console.clear();
+let simdi = new Date();
+let bugün = simdi.getDay();
+console.log(bugün);
+const günler = [
+  "Pazar",
+  "Pazartesi",
+  "Salı",
+  "Çarşamba",
+  "Perşembe",
+  "Cuma",
+  "Cumartesi",
+  ,
+];
+let simdikiGün;
+for (let index = 0; index < günler.length; index++) {
+  if (index === bugün) {
+    simdikiGün = günler[index];
+    break;
+  }
+}
+
+console.log(simdikiGün);
